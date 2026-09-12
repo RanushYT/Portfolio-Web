@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-handwriting: "Caveat", cursive;
+  --color-brand-dark: #111827;
+  --color-brand-purple: #EDE9FE;
+  --color-brand-yellow: #FEF9C3;
+  --color-brand-blue: #E0F2FE;
+  --color-brand-green: #DCFCE7;
+  --color-brand-accent: #6366F1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fbfbfd;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Pixel-perfect macOS style cursor: Crisp black arrow with white border & subtle shadow */
+html, body {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 2V19.5L7.87891 15.1211L11.5 22L14.5 20.5L11.0273 13.8867L17.5 13.5L3 2Z' fill='black' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 3 2, default;
+}
+
+/* macOS style pointer cursor */
+a, button, [role="button"], input[type="submit"], input[type="button"], select, .cursor-pointer {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 10.5V4C7.5 2.89543 8.39543 2 9.5 2C10.6046 2 11.5 2.89543 11.5 4V9.5H12C12.8284 9.5 13.5 10.1716 13.5 11V11.5H14C14.8284 11.5 15.5 12.1716 15.5 13V13.5H16C16.8284 13.5 17.5 14.1716 17.5 15V18C17.5 20.7614 15.2614 23 12.5 23C9.8 23 7.8 21.6 6.3 19.3L3.7 15.4C3.2 14.6 3.4 13.5 4.2 13C4.9 12.5 5.9 12.7 6.4 13.4L7.5 15V10.5Z' fill='black' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 7 2, pointer;
+}
+
+/* Hand-drawn yellow highlighter underline effect */
+.marker-highlight {
+  position: relative;
+  display: inline-block;
+}
+.marker-highlight::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  bottom: 2px;
+  width: 104%;
+  height: 10px;
+  background-color: #fef08a;
+  z-index: -1;
+  border-radius: 4px;
+  transform: rotate(-1deg);
+  opacity: 0.85;
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+.marker-highlight:hover::after {
+  transform: rotate(0.5deg) scaleY(1.15);
+}
+
+.marker-highlight-purple::after {
+  background-color: #e9d5ff;
+}
+
+/* Ambient float keyframes for portrait */
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-float-portrait {
+  animation: float-subtle 6s ease-in-out infinite;
+}
+
+/* Doodle wobble hover */
+.doodle-wobble {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.doodle-wobble:hover {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+/* Marquee Ribbon */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
