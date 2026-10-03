@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { ProjectItem } from '../types';
+import SocialProofModal from './SocialProofModal';
 
 interface ProjectsSectionProps {
   onOpenProjectModal: (project: ProjectItem) => void;
@@ -72,6 +73,7 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
     { name: 'Lunch @ Starbucks', cost: 6.5, cat: 'Food & Dining' },
   ]);
   const [selectedQuickItem, setSelectedQuickItem] = useState<string | null>(null);
+  const [isSocialProofOpen, setIsSocialProofOpen] = useState(false);
 
   const handleQuickAdd = (name: string, cost: number, cat: string) => {
     setSelectedQuickItem(name);
@@ -365,9 +367,9 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left: Phone Chat Mockup Container with Interactive Features */}
               <div className="lg:col-span-5 flex items-center justify-center">
-                <div className="w-full max-w-sm bg-indigo-50/40 p-4 rounded-3xl border border-indigo-100/80 shadow-inner relative flex gap-3 items-center">
+                <div className="w-full max-w-sm bg-indigo-50/40 p-4 rounded-3xl border border-indigo-100/80 shadow-inner relative flex flex-col sm:flex-row gap-3.5 sm:gap-3 items-center">
                   {/* Smartphone frame */}
-                  <div className="w-3/5 bg-white rounded-2xl border-2 border-slate-900 shadow-lg overflow-hidden flex flex-col text-left">
+                  <div className="w-full max-w-[270px] sm:max-w-none sm:w-3/5 bg-white rounded-2xl border-2 border-slate-900 shadow-lg overflow-hidden flex flex-col text-left">
                     {/* Phone Top Speaker & Camera */}
                     <div className="h-4 bg-slate-900 flex justify-center items-center">
                       <div className="w-8 h-1 bg-slate-700 rounded-full"></div>
@@ -421,7 +423,7 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
                   </div>
 
                   {/* Side Feature Buttons / Interactive simulation list */}
-                  <div className="flex-1 flex flex-col gap-2">
+                  <div className="w-full max-w-[270px] sm:max-w-none sm:w-auto sm:flex-1 grid grid-cols-2 sm:flex sm:flex-col gap-2">
                     <button
                       type="button"
                       onClick={() => handleQuickAdd('Coffee @ BlueTokai', 4.5, 'Food & Drinks')}
@@ -563,7 +565,7 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
               </div>
               <h3 className="text-2xl font-bold text-gray-950">Social Media &amp; Viral Growth</h3>
               <span className="px-3 py-0.5 rounded-full bg-pink-100 text-pink-600 text-xs font-semibold">
-                Audience Scale
+                225K+ in 28 Days
               </span>
             </div>
 
@@ -587,7 +589,7 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
                     </div>
                     <div>
                       <h5 className="text-sm font-bold text-gray-900 leading-none">Entertainment</h5>
-                      <span className="text-xs text-gray-500 font-medium mt-0.5 block">40K followers</span>
+                      <span className="text-xs text-gray-500 font-medium mt-0.5 block">225K followers</span>
                     </div>
                   </div>
 
@@ -595,7 +597,7 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
                   <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-xs relative overflow-hidden">
                     {/* Pin highlight bubble */}
                     <div className="absolute top-2 right-4 bg-pink-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs">
-                      40K+ Followers
+                      225K+ Followers
                     </div>
                     {/* Simulated graph SVG */}
                     <svg className="w-full h-20 overflow-visible" fill="none" viewBox="0 0 200 70">
@@ -605,9 +607,9 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
                     </svg>
                     <div className="flex justify-between text-[10px] font-mono text-gray-400 mt-2">
                       <span>Day 0</span>
-                      <span>Day 1</span>
-                      <span>Day 2</span>
-                      <span>Day 3</span>
+                      <span>Day 7</span>
+                      <span>Day 14</span>
+                      <span>Day 28</span>
                     </div>
                   </div>
 
@@ -616,15 +618,15 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
                     <div className="bg-emerald-50 border border-emerald-200/80 rounded-xl p-2 flex items-center gap-1.5">
                       <span className="text-emerald-600 font-bold text-sm">▶</span>
                       <div>
-                        <div className="text-xs font-bold text-emerald-800 leading-none">5.5M+</div>
+                        <div className="text-xs font-bold text-emerald-800 leading-none">61.6M+</div>
                         <span className="text-[10px] text-emerald-600">Video Views</span>
                       </div>
                     </div>
                     <div className="bg-pink-50 border border-pink-200/80 rounded-xl p-2 flex items-center gap-1.5">
-                      <span className="text-pink-600 font-bold text-sm">👥</span>
+                      <span className="text-pink-600 font-bold text-sm">📅</span>
                       <div>
-                        <div className="text-xs font-bold text-pink-800 leading-none">40K+</div>
-                        <span className="text-[10px] text-pink-600">in 3 Days</span>
+                        <div className="text-xs font-bold text-pink-800 leading-none">2 Videos/Day</div>
+                        <span className="text-[10px] text-pink-600">28-Day Cadence</span>
                       </div>
                     </div>
                   </div>
@@ -638,10 +640,13 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
-                    40K+ Followers in 3 Days
+                    225K+ Followers in 28 Days
                   </span>
                   <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200/60">
-                    ▶ 5.5M+ Video Views
+                    ▶ 61.6M+ Verified Views
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold border border-blue-200/60">
+                    ⚡ 2 Videos / Day Consistency
                   </span>
                 </div>
 
@@ -649,37 +654,43 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
                   Viral Facebook Community &amp; Content
                 </h4>
                 <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                  Founded and scaled a high-impact Facebook entertainment page from zero to 40,000+ engaged followers in just 72 hours, generating over 5.5 Million organic views through viral content strategies, audience retention hooks, and data-driven posting.
+                  Scaled a high-impact Facebook entertainment page from zero to 225,000+ followers and 61,687,682 organic views (reaching 32.7M unique viewers) in 28 days by producing engaging short-form Reels with relentless posting consistency of 2 videos per day.
                 </p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 pt-1">
                   <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded-full border border-pink-100">
-                    Viral Growth
+                    61.6M+ Views
                   </span>
                   <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded-full border border-pink-100">
-                    5.5M+ Views
+                    32.7M Viewers
                   </span>
                   <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded-full border border-pink-100">
-                    40K Followers in 3 Days
+                    2 Videos / Day
                   </span>
                   <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded-full border border-pink-100">
-                    Content Strategy
+                    28-Day Consistency
                   </span>
                   <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded-full border border-pink-100">
-                    Audience Engagement
+                    780K+ Engagements
+                  </span>
+                  <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded-full border border-pink-100">
+                    100% Reels
                   </span>
                 </div>
 
                 {/* Action Button and Hand-drawn Notes */}
                 <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <a
-                    className="inline-flex items-center justify-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 group/btn w-fit"
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 group/btn w-fit cursor-pointer"
+                    href="#social-proof"
+                    role="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsSocialProofOpen(true);
+                    }}
                   >
-                    <span>Visit Page</span>
+                    <span>View Case Study &amp; Proof</span>
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                     </svg>
@@ -714,6 +725,12 @@ export default function ProjectsSection({ onOpenProjectModal }: ProjectsSectionP
           <div>BUILT TO MAKE A DIFFERENCE.</div>
         </div>
       </div>
+
+      {/* Social Media Proof & Case Study Modal */}
+      <SocialProofModal
+        isOpen={isSocialProofOpen}
+        onClose={() => setIsSocialProofOpen(false)}
+      />
     </section>
   );
 }

@@ -38,7 +38,7 @@ export default function HeroSection({ onConnectClick }: HeroSectionProps) {
             I build <strong className="font-bold text-gray-950">efficient solutions</strong> for real-world problems using <strong className="font-bold text-gray-950">AI</strong>. I leverage modern AI models and automation to build and manage systems that save countless hours.
           </p>
           <p className="text-sm sm:text-base text-gray-600">
-            I also create and manage digital content, reaching an audience of <strong className="font-semibold text-gray-900">40K+ on Facebook</strong> and <strong className="font-semibold text-gray-900">10K+ subscribers on YouTube</strong>.
+            I also create and manage digital content, reaching an audience of <strong className="font-semibold text-gray-900">225K+ on Facebook</strong> and <strong className="font-semibold text-gray-900">10K+ subscribers on YouTube</strong>.
           </p>
         </div>
 

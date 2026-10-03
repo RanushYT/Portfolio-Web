@@ -154,7 +154,7 @@ export default function WhatIDoSection() {
               Content Creation &amp; Growth
             </h3>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Managing and scaling engaged communities with 40K+ Facebook followers and 10K+ YouTube subscribers through valuable tech &amp; educational content.
+              Managing and scaling engaged communities with 225K+ Facebook followers and 10K+ YouTube subscribers through valuable tech &amp; educational content.
             </p>
           </div>
           <div>

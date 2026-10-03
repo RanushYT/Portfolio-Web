@@ -21,7 +21,7 @@ export default function AboutSection() {
           </p>
           <p>
             Alongside software engineering, I create digital media and educational tech content, cultivating a combined community of{' '}
-            <strong className="text-gray-900 font-semibold">50K+ across Facebook and YouTube</strong>.
+            <strong className="text-gray-900 font-semibold">150K+ across Facebook and YouTube</strong>.
           </p>
           <div className="pt-4 font-handwriting text-2xl text-indigo-600 rotate-2 doodle-wobble cursor-default inline-block">
             Automate the Repetitive<br />&nbsp;&nbsp;Scale the Creative ✦
@@ -68,20 +68,21 @@ export default function AboutSection() {
               </div>
               <h3 className="font-bold text-gray-900 text-base">Content Creator</h3>
               <p className="text-xs sm:text-sm text-gray-600 mt-1">
-                40K+ Facebook • 10K+ YouTube Subscribers
+                225K+ Facebook • 10K+ YouTube Subscribers
               </p>
             </div>
 
-            {/* Card 4: Problem Solver */}
+            {/* Card 4: Completed Projects */}
             <div className="bg-sky-100/70 hover:bg-sky-100/95 p-5 rounded-2xl border border-sky-200/70 shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1.5 hover:border-sky-300 group cursor-default">
               <div className="w-9 h-9 mb-3 flex items-center justify-center text-sky-900 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
-                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M9 13l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h3 className="font-bold text-gray-900 text-base">Problem Solver</h3>
+              <h3 className="font-bold text-gray-900 text-base">Completed Projects</h3>
               <p className="text-xs sm:text-sm text-gray-600 mt-1">
-                Turning manual hours into automated workflows
+                5+ Completed Projects • AI, Robotics &amp; Full-Stack
               </p>
             </div>
           </div>

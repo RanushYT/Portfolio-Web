@@ -17,16 +17,6 @@ const CONTACT_CHANNELS: ContactChannel[] = [
     textHover: 'group-hover:text-purple-700',
   },
   {
-    id: 'linkedin',
-    name: 'LinkedIn',
-    value: 'linkedin.com/in/ranusha-sathsara',
-    href: 'https://linkedin.com/in/ranusha-sathsara',
-    icon: 'linkedin',
-    bgClass: 'bg-sky-100/70 text-sky-900',
-    borderHover: 'hover:border-sky-300',
-    textHover: 'group-hover:text-sky-900',
-  },
-  {
     id: 'github',
     name: 'GitHub',
     value: 'github.com/RanushYT',
@@ -35,6 +25,16 @@ const CONTACT_CHANNELS: ContactChannel[] = [
     bgClass: 'bg-slate-100 text-gray-900',
     borderHover: 'hover:border-gray-400',
     textHover: 'group-hover:text-black',
+  },
+  {
+    id: 'linkedin',
+    name: 'LinkedIn',
+    value: 'linkedin.com/in/ranusha-sathsara',
+    href: 'https://linkedin.com/in/ranusha-sathsara',
+    icon: 'linkedin',
+    bgClass: 'bg-sky-100/70 text-sky-900',
+    borderHover: 'hover:border-sky-300',
+    textHover: 'group-hover:text-sky-900',
   },
   {
     id: 'phone',
@@ -218,7 +218,7 @@ export default function ContactSection({ onOpenMessageModal }: ContactSectionPro
           </div>
 
           {/* Send a Message CTA Button & Lower Right Doodle */}
-          <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6 relative">
+          <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 relative">
             <button
               type="button"
               onClick={onOpenMessageModal}
@@ -229,6 +229,11 @@ export default function ContactSection({ onOpenMessageModal }: ContactSectionPro
                 <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
+
+            <span className="text-xs text-gray-500 flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+              <span>Direct to: <strong className="text-gray-700 font-semibold">ranushasa05@gmail.com</strong></span>
+            </span>
 
             {/* Lower Right Doodle: Reach out anytime + curved arrow */}
             <div className="font-handwriting text-xl text-purple-400 select-none doodle-wobble cursor-default flex items-center gap-2 rotate-[-6deg] ml-auto pr-6 hidden md:flex">
